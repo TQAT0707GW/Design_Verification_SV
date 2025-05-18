@@ -51,16 +51,6 @@ module tb_dual_ram;
     initial begin
         RamTest test;
         test = new();
-
-        // Reset ban đầu
-        ram_if_inst.wea = 0;
-        ram_if_inst.web = 0;
-        ram_if_inst.addra = 0;
-        ram_if_inst.addrb = 0;
-        ram_if_inst.dina = 0;
-        ram_if_inst.dinb = 0;
-
-		
         // Chạy 10 trường hợp kiểm tra ngẫu nhiên
         repeat (5) begin
             assert(test.randomize()) else $fatal("Tạo dữ liệu ngẫu nhiên thất bại!");
